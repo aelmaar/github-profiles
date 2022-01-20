@@ -1,3 +1,7 @@
+# A project made with React and React router
+Hi I am Anouar and I am a web developer.\
+Today I make this project again to refresh my memory on React and also for fun :)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
