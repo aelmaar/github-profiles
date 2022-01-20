@@ -1,38 +1,87 @@
-.App {
+.app_Nav {
+  background: #24292f;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 0 20px;
+}
+
+input {
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: none;
+  border-radius: 5px;
+  padding: 7px 0 7px 5px;
+  outline: none;
+  color: white;
+  width: 150px;
+  transition: all 0.4s ease;
+}
+
+input:focus {
+  width: 300px;
+  background: #fff;
+  color: #24292f;
+}
+
+.userbox_container {
+  margin-top: 30px;
+  text-align: center;
+}
+/*
+.userbox_users {
+}*/
+
+.userinfo_container {
+  margin-top: 30px;
+  padding: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.userinfo_progress {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.userinfo_progress span {
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.user_details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.userepo_container {
+  flex: 1;
+}
+.userepo_container h1 {
+  text-align: center;
+}
+
+.userepo_repos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.userepo_repo {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  border: 1px solid #24292f;
+  padding: 0 0 0 10px;
+  border-radius: 10px;
+  width: 350px;
+  margin: 10px;
 }
+/*
+.userepo_desc {
+  
+}*/
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.userepo_desc p {
+  font-size: 12px;
 }
