@@ -2,24 +2,22 @@ import React from "react";
 import logo from "./../images/GitHub-Mark-Light-64px.png";
 import HomeIcon from "@mui/icons-material/Home";
 import { Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
-function ReturnHome(props) {
-  const { onReturn } = props;
-
-  const handleClickReturn = () => {
-    onReturn();
-  };
+function ReturnHome() {
   return (
-    <div className="app_Nav">
-      <div>
-        <img src={logo} alt="github logo" />
+    <div>
+      <div className="app_Nav">
+        <div>
+          <img src={logo} alt="github logo" />
+        </div>
+        <Link to="/">
+          <Button>
+            <HomeIcon sx={{ fontSize: 50 }} style={{ color: "white" }} />
+          </Button>
+        </Link>
       </div>
-      <Link to="/">
-        <Button onClick={handleClickReturn}>
-          <HomeIcon sx={{ fontSize: 50 }} style={{ color: "white" }} />
-        </Button>
-      </Link>
+      <Outlet />
     </div>
   );
 }

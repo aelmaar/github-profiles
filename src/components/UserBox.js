@@ -10,17 +10,16 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 
-function UserBox({ user, onClick }) {
+function UserBox({ user }) {
   const { login, avatar_url, html_url } = user;
-
-  const handleClick = () => {
-    onClick(login);
-  };
 
   return (
     <Card sx={{ maxWidth: 350, display: "inline-block", margin: "10px" }}>
-      <Link to={login} style={{ textDecoration: "none", color: "#000" }}>
-        <CardActionArea onClick={handleClick}>
+      <Link
+        to={`users/${login}`}
+        style={{ textDecoration: "none", color: "#000" }}
+      >
+        <CardActionArea>
           <CardMedia
             component="img"
             image={avatar_url}

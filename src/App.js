@@ -3,6 +3,7 @@ import "./App.css";
 import UserInfoContainer from "./components/UserInfoContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
+import ReturnHome from "./components/ReturnHome";
 
 async function fetchData(url) {
   const response = await fetch(url);
@@ -17,7 +18,7 @@ function App() {
   useEffect(() => {
     fetchData("https://api.github.com/users").then((data) => setUsers(data));
   }, []);
-  
+
   const handleSearchChange = (value) => {
     setSearch(value);
   };
@@ -33,18 +34,6 @@ function App() {
       setUser(null);
     }
   };
-  // to show the user information including its repositories etc... :)
-  const handleClick = (login) => {
-    if (login) {
-      fetchData(`https://api.github.com/users/${login}`).then((data) =>
-        setUser(data)
-      );
-    }
-  };
-  // return to home
-  const handleClickReturn = () => {
-    setUser(null);
-  };
 
   return (
     <BrowserRouter>
@@ -58,20 +47,12 @@ function App() {
               onSubmission={handleSubmit}
               profiles={users}
               profile={user}
-              onHandleClick={handleClick}
             />
           }
         />
-
-        <Route
-          path=":user"
-          element={
-            <UserInfoContainer
-              profile={user !== null && user}
-              onReturnHome={handleClickReturn}
-            />
-          }
-        />
+        <Route path="users" element={<ReturnHome />}>
+          <Route path=":userId" element={<UserInfoContainer />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
