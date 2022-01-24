@@ -8,11 +8,9 @@ function UserBoxContainer(props) {
     <div className="userbox_container">
       <div className="userbox_users">
         {!profile ? (
-          profiles.map((profile) => (
-            <UserBox key={profile.id} user={profile}/>
-          ))
+          profiles.map((profile) => <UserBox key={profile.id} user={profile} />)
         ) : (
-          <UserBox user={profile}/>
+          <UserBox user={profile} />
         )}
       </div>
     </div>

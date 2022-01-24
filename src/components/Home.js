@@ -1,6 +1,7 @@
 import React from "react";
 import SearchBar from "./SearchBar";
 import UserBoxContainer from "./UserBoxContainer";
+import { Outlet, useParams } from "react-router-dom";
 
 function Home(props) {
   const {
@@ -11,18 +12,27 @@ function Home(props) {
     profile,
     onHandleClick,
   } = props;
+
+  let { userId } = useParams();
+
   return (
     <div className="App">
-      <SearchBar
-        onSearchTextChange={onSearchTextChange}
-        value={value}
-        onSubmission={onSubmission}
-      />
-      <UserBoxContainer
-        profiles={profiles}
-        profile={profile}
-        onHandleClick={onHandleClick}
-      />
+      {!userId ? (
+        <div>
+          <SearchBar
+            onSearchTextChange={onSearchTextChange}
+            value={value}
+            onSubmission={onSubmission}
+          />
+          <UserBoxContainer
+            profiles={profiles}
+            profile={profile}
+            onHandleClick={onHandleClick}
+          />
+        </div>
+      ) : (
+        <Outlet />
+      )}
     </div>
   );
 }

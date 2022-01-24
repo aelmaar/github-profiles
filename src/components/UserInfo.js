@@ -2,7 +2,15 @@ import React from "react";
 import { Avatar, Button } from "@mui/material";
 
 function UserInfo(props) {
-  const {name,avatar_url,html_url,followers,following,public_repos,public_gists} = props.userinfo;
+  const {
+    name,
+    avatar_url,
+    html_url,
+    followers,
+    following,
+    public_repos,
+    public_gists,
+  } = props.userinfo;
 
   return (
     <div className="userinfo_container">
@@ -12,7 +20,13 @@ function UserInfo(props) {
         sx={{ width: 300, height: 300 }}
       />
       <h3>{name}</h3>
-      <Button color="primary" variant="contained" color="success" href={html_url} target="_blank">
+      <Button
+        color="primary"
+        variant="contained"
+        color="success"
+        href={html_url}
+        target="_blank"
+      >
         Check the profile on Github
       </Button>
       <div className="userinfo_progress">

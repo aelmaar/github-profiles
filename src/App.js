@@ -49,9 +49,10 @@ function App() {
               profile={user}
             />
           }
-        />
-        <Route path="users" element={<ReturnHome />}>
-          <Route path=":userId" element={<UserInfoContainer />} />
+        >
+          <Route path="users" element={<ReturnHome />}>
+            <Route path=":userId" element={<UserInfoContainer />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>
