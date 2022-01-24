@@ -39,7 +39,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route
-          path="/"
+          path={process.env.PUBLIC_URL + "/"}
           element={
             <Home
               onSearchTextChange={handleSearchChange}

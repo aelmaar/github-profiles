@@ -11,7 +11,7 @@ function ReturnHome() {
         <div>
           <img src={logo} alt="github logo" />
         </div>
-        <Link to="/">
+        <Link to={process.env.PUBLIC_URL + "/"}>
           <Button>
             <HomeIcon sx={{ fontSize: 50 }} style={{ color: "white" }} />
           </Button>

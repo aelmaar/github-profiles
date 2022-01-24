@@ -21,7 +21,6 @@ function UserInfo(props) {
       />
       <h3>{name}</h3>
       <Button
-        color="primary"
         variant="contained"
         color="success"
         href={html_url}
