@@ -1,6 +1,10 @@
 # A project made with React and React router
 Hi I am Anouar and I am a web developer.\
 Today I make this project again to refresh my memory on React and also for fun :)
+## Tools used
+- react hooks
+- react router v6
+- material ui
 
 # Getting Started with Create React App
 
